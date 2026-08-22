@@ -1,16 +1,24 @@
 class Solution {
 public:
-    void generate(vector<string> &ans,string s, int open, int close, int n){
-        if(close == n){
-           ans.push_back(s);
-           return;
+
+    void generatepar(int n,int left,int right,string s,vector<string> &ans){
+
+        if(left==n && right==n){
+            ans.push_back(s);
+            return;
         }
-        if(open < n) generate(ans,s+'(',open+1, close, n);
-        if(close < open) generate(ans,s+')',open, close+1, n);
+
+
+
+        if(left<n) generatepar(n,left+1,right,s+'(',ans);
+        if(right<left) generatepar(n,left,right+1,s+')',ans);
     }
     vector<string> generateParenthesis(int n) {
         vector<string> ans;
-        generate(ans,"", 0, 0, n);
+        string s="";
+        generatepar(n,0,0,s,ans);
+
         return ans;
+        
     }
 };
