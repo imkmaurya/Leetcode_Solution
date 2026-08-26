@@ -1,6 +1,7 @@
 class Solution {
 public:
     int findTheWinner(int n, int k) {
+        
         int person_left=n;
         int start=0;
         int count=0;
