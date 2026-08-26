@@ -1,6 +1,9 @@
 class Solution {
 public:
     int findTheWinner(int n, int k) {
+        if(k>n){
+            k=k%n;
+        }
         
         int person_left=n;
         int start=0;
