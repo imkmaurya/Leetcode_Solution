@@ -11,7 +11,7 @@ public:
             if(nums[r]==0){
                 cz++;
             }
-            while(cz>k){
+            if(cz>k){
                 if(nums[l]==0)cz--;
                 l++;
             }
